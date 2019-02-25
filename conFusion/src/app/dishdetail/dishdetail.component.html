@@ -1,13 +1,13 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px" fxLayoutGap.xs="0">
   <div fxFlex="40">
-    <mat-card>
+    <mat-card *ngIf="dish">
       <mat-card-header>
         <mat-card-title>
           <h3>{{dish.name | uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src={{dish.image}} alt={{dish.name}}>
+      <img mat-card-image class="img" src={{dish.image}} alt={{dish.name}}>
       <mat-card-content>
         <p>{{dish.description}}</p>
       </mat-card-content>
@@ -18,8 +18,8 @@
     </mat-card>
   </div>
   <div fxFlex="40">
-    <h3>Comments</h3>
     <mat-list *ngIf="dish">
+      <h3>Comments</h3>
       <mat-list-item *ngFor="let comments of dish.comments" style="margin-bottom:5px">
         <h4 matLine>{{comments.comment}}</h4>
         <p matLine>{{comments.rating}} Stars</p>
