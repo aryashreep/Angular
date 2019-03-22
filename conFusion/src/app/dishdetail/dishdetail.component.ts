@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 import { Params, ActivatedRoute } from '@angular/router';
@@ -18,11 +18,15 @@ export class DishdetailComponent implements OnInit {
   dishIds: string[];
   prev: string;
   next: string;
+  @ViewChild('cform') commentFormDirective;
+  comment: Comment;
+  commentForm: FormGroup;
 
   constructor(private dishService: DishService,
     private route: ActivatedRoute,
     private location: Location,
-    private commentformbuilder: FormBuilder) {
+    private commentformbuilder: FormBuilder,
+    @Inject('BaseURL') private BaseURL) {
     this.createCommentForm();
   }
 
@@ -44,8 +48,6 @@ export class DishdetailComponent implements OnInit {
   }
 
   //Comment submission form
-  commentForm: FormGroup;
-  comment: Comment;
   commentFormErrors = {
     'author': '',
     'rating': '',
