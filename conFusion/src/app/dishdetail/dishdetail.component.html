@@ -48,7 +48,6 @@
 
     <div class="full-width">
       <!-- Assignment 3 Form for Comment submission -->
-      <p> {{ commentForm.value | json}} {{commentForm.status | json}} </p>
       <form novalidate [formGroup]="commentForm" (ngSubmit)="onCommentSubmit()">
         <mat-form-field class="full-width">
           <input matInput formControlName="author" placeholder="Author Name" type="text">
@@ -79,13 +78,12 @@
 
       </form>
     </div>
-
-    <div fxFlex [hidden]="dish || errMess">
-      <mat-spinner></mat-spinner>
-      <h4>Loading.... Please Wait.</h4>
-    </div>
-    <div fxFlex *ngIf="errMess">
-      <h2>Error</h2>
-      <h4>{{errMess}}</h4>
-    </div>
-  </div>
+ </div>
+ <div fxFlex [hidden]="dish || errMess">
+  <mat-spinner></mat-spinner>
+  <h4>Loading ... Please Wait!</h4>
+</div>
+<div fxFlex *ngIf="errMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
+</div>
