@@ -6,11 +6,25 @@ import { Location } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Comment } from '../shared/comment';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
-  styleUrls: ['./dishdetail.component.scss']
+  styleUrls: ['./dishdetail.component.scss'],
+  animations: [
+    trigger('visibility', [
+      state('shown', style({
+        transform: 'scale(1.0)',
+        opacity: 1
+      })),
+      state('hidden', style({
+        transform: 'scale(0.5)',
+        opacity: 0
+      })),
+      transition('* => *', animate('0.5s ease-in-out'))
+    ])
+  ]
 })
 
 export class DishdetailComponent implements OnInit {
@@ -23,33 +37,7 @@ export class DishdetailComponent implements OnInit {
   comment: Comment;
   commentForm: FormGroup;
   dishcopy: Dish;
-
-  constructor(private dishService: DishService,
-    private route: ActivatedRoute,
-    private location: Location,
-    private commentformbuilder: FormBuilder,
-    @Inject('BaseURL') private BaseURL) {
-    this.createCommentForm();
-  }
-
-  ngOnInit() {
-    this.dishService.getDishIds()
-      .subscribe((dishIds) => this.dishIds = dishIds);
-      this.route.params
-      .pipe(switchMap((params: Params) => this.dishService.getDish(params['id'])))
-      .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },
-        errmess => this.errMess = <any>errmess );
-  }
-
-  setPrevNext(dishIds: string) {
-    const index = this.dishIds.indexOf(dishIds);
-    this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
-    this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
-  }
-
-  goBack(): void {
-    this.location.back();
-  }
+  visibility = 'shown';
 
   //Comment submission form
   commentFormErrors = {
@@ -71,6 +59,39 @@ export class DishdetailComponent implements OnInit {
       'minlength': 'Comment must be at least 1 characters long'
     }
   };
+
+  constructor(private dishService: DishService,
+    private route: ActivatedRoute,
+    private location: Location,
+    private commentformbuilder: FormBuilder,
+    @Inject('BaseURL') private BaseURL) {
+    this.createCommentForm();
+  }
+
+  ngOnInit() {
+    this.dishService.getDishIds()
+      .subscribe((dishIds) => this.dishIds = dishIds);
+    this.route.params
+      .pipe(switchMap((params: Params) => {
+        this.visibility = 'hidden';
+        return this.dishService.getDish(params['id']);
+      }))
+      .subscribe(dish => {
+        this.dish = dish;
+        this.dishcopy = dish;
+        this.setPrevNext(dish.id); this.visibility = 'shown';
+      }, errmess => this.errMess = <any>errmess);
+  }
+
+  setPrevNext(dishIds: string) {
+    const index = this.dishIds.indexOf(dishIds);
+    this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
+    this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
 
   createCommentForm() {
     this.commentForm = this.commentformbuilder.group({
@@ -113,7 +134,7 @@ export class DishdetailComponent implements OnInit {
       .subscribe(dish => {
         this.dish = dish; this.dishcopy = dish;
       },
-      errmess => { this.dish = null; this.dishcopy = null; this.errMess = <any>errmess; });
+        errmess => { this.dish = null; this.dishcopy = null; this.errMess = <any>errmess; });
     this.commentFormDirective.resetForm();
     this.commentForm.reset({
       author: '',
