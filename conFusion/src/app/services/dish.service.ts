@@ -10,8 +10,8 @@ import { ProcessHTTPMsgService } from './process-httpmsg.service';
 @Injectable({
   providedIn: 'root'
 })
-export class DishService {
 
+export class DishService {
   constructor(private http: HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService) { }
 
@@ -38,11 +38,11 @@ export class DishService {
 
   putDish(dish: Dish): Observable<Dish> {
     const httpOptions = {
-       headers: new HttpHeaders({
-          'Content-Type' : 'appliaction/json'
-       })
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
     };
     return this.http.put<Dish>(baseURL + 'dishes/' + dish.id, dish, httpOptions)
-    .pipe(catchError(this.processHTTPMsgService.handleError));
+      .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 }

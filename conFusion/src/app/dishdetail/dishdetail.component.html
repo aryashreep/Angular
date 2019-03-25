@@ -48,7 +48,7 @@
 
     <div class="full-width">
       <!-- Assignment 3 Form for Comment submission -->
-      <form novalidate [formGroup]="commentForm" (ngSubmit)="onCommentSubmit()">
+      <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="full-width">
           <input matInput formControlName="author" placeholder="Author Name" type="text">
           <mat-hint>
