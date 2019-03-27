@@ -1,7 +1,7 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px">
 
-  <mat-card fxFlex *ngIf="dish"  [@expand]>
+  <mat-card fxFlex *ngIf="dish" [@expand]>
     <mat-card-header>
       <div mat-card-avatar></div>
       <mat-card-title>
@@ -21,25 +21,29 @@
   <div fxFlex *ngIf="dishErrorMess">
     <h2>Error</h2>
     <h4>{{dishErrorMess}}</h4>
-  </div>  
-  <mat-card fxFlex *ngIf="promotion"  [@expand]>
+  </div>
+  <mat-card fxFlex *ngIf="promotion" [@expand]>
     <mat-card-header>
       <div mat-card-avatar></div>
       <mat-card-title>
         <h3>{{promotion.name | uppercase}}</h3>
       </mat-card-title>
     </mat-card-header>
-    <img mat-card-image src={{promotion.image}} alt={{promotion.name}}>
+    <img mat-card-image src="{{BaseURL + promotion.image}}" alt={{promotion.name}}>
     <mat-card-content>
       <p>{{promotion.description}}
       </p>
     </mat-card-content>
   </mat-card>
-  <div [hidden]="promotion">
+  <div fxFlex [hidden]="promotion || promotionErrMess">
     <mat-spinner></mat-spinner>
     <h4>Loading ... Please Wait!</h4>
   </div>
-  <mat-card fxFlex *ngIf="leader"  [@expand]>
+  <div fxFlex *ngIf="promotionErrMess">
+    <h2>Error</h2>
+    <h4>{{promotionErrMess}}</h4>
+  </div>
+  <mat-card fxFlex *ngIf="leader" [@expand]>
     <mat-card-header>
       <div mat-card-avatar></div>
       <mat-card-title>
