@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
-import { flyInOut } from '../animations/app.animations';
+import { FeedbackService } from '../services/feedback.service';
+import { visibility, flyInOut } from '../animations/app.animations';
 
 @Component({
   selector: 'app-contact',
@@ -12,14 +13,18 @@ import { flyInOut } from '../animations/app.animations';
     'style': 'display: block;'
   },
   animations: [
-    flyInOut()
+    flyInOut(),
+    visibility()
   ]
 })
 export class ContactComponent implements OnInit {
+  feedbacks: Feedback[];
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
   @ViewChild('fform') feedbackFormDirective;
+  feedbackErrMsg: string;
+  visibility = 'shown';
 
   formErrors = {
     'firstname': '',
@@ -49,11 +54,15 @@ export class ContactComponent implements OnInit {
     }
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private feedbackservice: FeedbackService,
+    @Inject('BaseURL') private BaseURL) {
     this.createForm();
   }
 
   ngOnInit() {
+    this.feedbackservice.getFeedbacks()
+      .subscribe((feedbacks) => this.feedbacks = feedbacks);
   }
 
   createForm() {
@@ -95,7 +104,15 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
+    //submit the feedback
+    this.feedbackservice.submitFeedback(this.feedback)
+      .subscribe(feedback => {
+        this.feedback = feedback;
+      },
+        feedbackErrMsg => {
+          this.feedback = null; this.feedbackErrMsg = <any>feedbackErrMsg;
+        });
+
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',
@@ -105,6 +122,5 @@ export class ContactComponent implements OnInit {
       contacttype: 'None',
       message: '',
     });
-    this.feedbackFormDirective.resetForm();
   }
 }
