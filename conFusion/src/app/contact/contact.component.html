@@ -33,10 +33,8 @@
       </div>
     </div>
   </div>
-  <div fxFlex fxFlexOffset="20px" class="form-size" *ngIf="formErrors">
+  <div fxFlex fxFlexOffset="20px" class="form-size" [hidden]="submitted" [@visibility]="visibility" [@expand]>
     <h3>Send us your Feedback</h3>
-    <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
-
     <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
       <p>
         <mat-form-field class="half-width">
@@ -79,17 +77,18 @@
         [disabled]="feedbackForm.invalid">Submit</button>
     </form>
   </div>
-  <div fxFlex *ngIf="feedbacks">
-    <mat-list *ngFor="let feedback of feedbacks">
-      <mat-list-item> {{feedback.firstname }}  {{feedback.lastname}}</mat-list-item>
-      <mat-list-item> {{feedback.telnum}} </mat-list-item>
-      <mat-list-item> {{feedback.email}} </mat-list-item>
-      <mat-list-item> Agree : {{feedback.agree}} </mat-list-item>
-      <mat-list-item> Contact Type : {{feedback.contacttype}} </mat-list-item>
-      <mat-list-item> Message : {{feedback.message}} </mat-list-item>
+  <div fxFlex [hidden]="!success" [@visibility]="visibility" [@expand]>
+    <mat-list>
+      <mat-list-item>Firstname : {{returnedFeedback.firstname }}</mat-list-item>
+      <mat-list-item>Lastname : {{returnedFeedback.lastname}}</mat-list-item>
+      <mat-list-item>Tel No : {{returnedFeedback.telnum}}</mat-list-item>
+      <mat-list-item>Email : {{returnedFeedback.email}}</mat-list-item>
+      <mat-list-item>Agree : {{returnedFeedback.agree}}</mat-list-item>
+      <mat-list-item>Contact Type : {{returnedFeedback.contacttype}}</mat-list-item>
+      <mat-list-item>Message : {{returnedFeedback.message}}</mat-list-item>
     </mat-list>
   </div>
-  <div [hidden]="feedbacks || feedbackErrMsg">
+  <div [hidden]="!submitted || feedbackErrMsg">
     <mat-spinner></mat-spinner>
     <h4>Loading ... Please Wait.</h4>
   </div>

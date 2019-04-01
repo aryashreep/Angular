@@ -239,15 +239,6 @@
   "feedback": [
     {
       "firstname": "Aryashree",
-      "lastname": "Pritikrishna",
-      "telnum": "8147450705",
-      "email": "aryashree@etechbuddy.com",
-      "agree": "true",
-      "contacttype": "Email",
-      "message": "I'm interested in the dishes and want to open my restro. Can we discuss on the same."
-    },
-    {
-      "firstname": "Aryashree",
       "lastname": "zx",
       "telnum": "1234567890",
       "email": "aa@aa",
@@ -265,6 +256,326 @@
       "contacttype": "Email",
       "message": "qqqqqq",
       "id": "kAan8hx"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "zx",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "asdsadsa dsadasd",
+      "id": "W7yetQZ"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "zx",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "asd dasdas asdsa asdsad",
+      "id": "M-XF7Tm"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "zx",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "zxcxcx",
+      "id": "CJEb_Wy"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "zx",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "sdgfg fgfdg fdg fdg",
+      "id": "uu5edXx"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "as asdsa dsad sad sad",
+      "id": "oaGcCk5"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "zx",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "zxc czxc xzc xzc xzc xzc",
+      "id": "MQuVit2"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "zx",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "asdsad asasd asdsad",
+      "id": "Qby0jiy"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "asdsadasd dsadsds",
+      "id": "rD9u-Fl"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "werewrwer",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "asds vcxvcxvcx xvccxvxcv",
+      "id": "EHpSbyU"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "werewrwer",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "xcxzc zxczxczx z zxc",
+      "id": "O-hUKzJ"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "sdfdsf sdfdsfsdf",
+      "id": "mDSJhrc"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "",
+      "id": "xSNZozQ"
+    },
+    {
+      "firstname": "wqeqw",
+      "lastname": "werewrwer",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "Tel",
+      "message": "",
+      "id": "2haJrxo"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "zx",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "sdsadsadsd",
+      "id": "SABjzrd"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "sadsad sadd asdsd",
+      "id": "biv6356"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "wmYveNQ"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "xcccccccccccc  scccccccccc",
+      "id": "eKF9HBR"
+    },
+    {
+      "firstname": "Aryashreeqw",
+      "lastname": "qwqw",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "dfdfdf",
+      "id": "oxKZ3Iu"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "sads casdsd asdsad",
+      "id": "OeY5u1s"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "werewrwer",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "nmtyuiol",
+      "id": "G2A76OT"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "F5OzFUk"
+    },
+    {
+      "firstname": "wqeqw",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "asdasd asdsad",
+      "id": "NIgAIgn"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "Email",
+      "message": "",
+      "id": "l0REcO5"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "WWrqZgN"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "IxAk9JR"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "kr67nGX"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "WC1FirY"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "werewrwer",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "8BUzu62"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "Tel",
+      "message": "",
+      "id": "4dKJ8xZ"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "None",
+      "message": "",
+      "id": "nQKRwE0"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567890",
+      "email": "aa@aa",
+      "agree": false,
+      "contacttype": "Email",
+      "message": "asasa",
+      "id": "fJ1-Xgp"
+    },
+    {
+      "firstname": "Aryashree",
+      "lastname": "qweqwe",
+      "telnum": "1234567",
+      "email": "xzczxc@as",
+      "agree": false,
+      "contacttype": "Tel",
+      "message": "",
+      "id": "Z5u80vD"
     }
   ]
 }
