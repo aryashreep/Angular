@@ -8,4 +8,12 @@ export class AppPage {
   getParagraphText(selector: string) {
     return element(by.css(selector)).getText();
   }
+
+  getElement(selector: string) {
+    return element(by.css(selector));
+  }
+
+  getAllElements(selector: string) {
+    return element.all(by.css(selector));
+  }
 }
